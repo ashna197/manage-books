@@ -74,7 +74,7 @@ async function updateBookDetails(req, res) {
             return res.status(400).json({ detail: `id : ${req.params.bookId} is not a valid uuid` })
         }
         //To check the validations on body passed in the request
-        const errors = validationCheck.validateRequestBody(req, res);
+        const errors = validationCheck.validateRequestBody(req.body);
         if (!isEmpty(errors)) {
             return res.status(400).json(errors)
         }
