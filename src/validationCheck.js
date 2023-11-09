@@ -13,7 +13,7 @@ class ValidationChecks {
         if (!isString(requestBody.summary) || isEmpty(requestBody.summary.trim())) {
             this.pushErrorDetails('summary should be of type string and cannot be empty string', 'summary', errors)
         }
-
+        return errors;
     }
 
     /**
